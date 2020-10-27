@@ -46,3 +46,17 @@ ol li strong{
     background:green;
     color:black;
 }
+
+.yellow {
+    background:yellow;
+    color:black;
+}
+
+li.yellow{
+    background:#b5b507;
+}
+
+body#main_content .black{
+    background:black;
+    color:yellow;
+}
