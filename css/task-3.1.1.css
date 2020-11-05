@@ -1,0 +1,12 @@
+main{
+    max-width:calc(75% - 58px);
+    float:left;
+}
+aside{
+    max-width: calc(25% - 54px);
+    float: left;
+    border-left: none;
+}
+footer{
+    clear:both;
+}
