@@ -20,7 +20,7 @@
     </footer>
     <script>
 
-        var shoppingCart=[
+        var objShoppingCart=[
             {name:"loaf of bread",type:"food",quantity:1,price:.85},
             {name:"multipack beans",type:"food",quantity:1,price:1},
             {name:"mushrooms",type:"food",quantity:10,price:.1},
@@ -33,6 +33,11 @@
             {name:"onions",type:"food",quantity:3,price:.4}
         ];
 
+        function getTotalPrice(objCart){
+            console.log(objCart);
+        }
+
+        getTotalPrice(objShoppingCart);
 
     </script>
 </body>
