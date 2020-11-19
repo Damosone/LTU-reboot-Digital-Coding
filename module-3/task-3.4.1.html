@@ -24,6 +24,7 @@
         for (var multiplyer = 1; multiplyer <= 12; multiplyer++){
 
             console.log('This is our ' + multiplyer + ' times tables');
+            console.log(`This is our ${multiplyer} times tables`);
             
             for ( var counter = 1; counter <= 12; counter++){
                 
@@ -35,6 +36,21 @@
             
             }
         
+        }
+    
+        // ++ means take variable and add 1 to itself
+
+        for ( let counter = 1; counter <=12; counter++) {
+
+            document.write('<div>'); //Open div tag
+            document.write('<header>' + `${counter}` + 'times table' + '</header>');
+
+            for ( let counter2 = 1; counter2 <=12; counter2++ ) {
+                // document.write (counter * counter2 + '=' + counter + '*' counter2 + '<br>');
+                document.write(`${counter} * ${counter2} = ${counter * counter2} <br>`);
+            }
+            //console.log(counter*7);
+            // document.write(counter*7 + '<br>');
         }
 
 
