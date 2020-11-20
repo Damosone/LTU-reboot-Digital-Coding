@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Task-3.4.3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/task-3.1.css" />
+    <title>Document</title>
 </head>
 <body>
     <header>
-        <h1>JavaScript Task 3.4.3</h1>
+        <h1>Javascript task 3.5.3</h1>
     </header>
     <main>
-        
+        <p>To view this task you will need to open the console in developer tools.</p>
     </main>
-
     <aside>
-
     </aside>
-
     <footer>
-       <p>&copy; 2020</p>
+        <p>&copy; 2020</p>
     </footer>
-
-<script>
-
-    var arrShoppingCart=[
+    <script>
+        //array of objects (shopping cart)
+        var arrShoppingCart=[
             {name:"loaf of bread",type:"food",quantity:1,price:.85},
             {name:"multipack beans",type:"food",quantity:1,price:1},
             {name:"mushrooms",type:"food",quantity:10,price:.1},
@@ -36,35 +33,34 @@
             {name:"onions",type:"food",quantity:3,price:.4}
         ];
 
-        function getTotalPrice(arrCart){
+        function itemPriceRange(arrCar,lowPrice,highPrice,quantity=false){
             //testing the object is correct
             console.log(arrCart);
-            //create a total price variable
-            var totalPrice = 0;
-            //loop through each item of the cart
-            var currentItem;
-            var currentItemTotal;
-            for (counter = 0; counter < arrCart.length; counter++){
-                //set a varible to be the current cart item
-                currentItem = arrCart [counter];
-                //testing the counter abd the cuttent item are correct
-                console.log (counter);
-                console.log (currentItemTotal);
-                //add the quanity * price of the object to total price
-                currentItemTotal = currentItem ['quantity'] * currentItem.price;
-                console.log (currentItemTotal);
-                totalPrice = totalPrice + currentItemTotal;
-                console.log (totalPrice);
+            console.log(lowPrice);
+            console.log(highPrice);
+            //create an array to populate with items between the ranges
+            var arrItems = [];
+            for(counter=0; counter <arrCart.length; counter++){
+                //setting the variable for the current cart item
+                currentItem = arrcart[counter];
+                console.log(currentItem);
+                //setting the variable for the item so it can be manipulated if required
+                itemPrice = currentItem.price;
+                if(quantity){
+                    itemPrice = itemPrice * currentItem.quantity;
+                }
+                //if the item price is higher than or equal to the low price and lower than or equal to the low price
+                if(itemPrice >= lowPrice && itemPrice <= highPrice){
+                    arrItems.push(currentItem);
+
+                }
             }
-            //return the total price
-            totalPrice = totalPrice.toFixed(2);
-            return totalPrice;
+            return arrItems;
         }
-
-        var cartTotal = getTotalPrice(arrShoppingCart);
-        console.log ('cartTotal: ' + cartTotal);
-
-</script>
-
+        var arrPriceRangeItems = itemPriceRange(arrShoppingCart,1,4);
+        console.log(arrPriceRangeItems);
+        arrPriceRangeItems = itemPriceRange(arrShoppingCart,1,4,true);
+        console.log(arrPriceRangeItems);
+    </script>
 </body>
 </html>
