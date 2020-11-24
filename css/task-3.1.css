@@ -10,3 +10,11 @@ aside{
 footer{
     clear:both;
 }
+
+img{
+    max-width:100%;
+}
+
+.redDashedBorder{
+    border:3px dashed red;
+}
