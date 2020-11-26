@@ -35,7 +35,11 @@
         container.style.border = '3px dashed red';
 
         var paragraph = document.createElement('p');
+        //<p></p>
         paragraph.innerHTML = 'Hello LTU Class';
+        //<p>Hello LTU Class</p>
+        paragraph.innerHTML = '<span style="color:red">Alex</span> is cool';
+        
         // console.log(paragraph);
         container.appendChild(paragraph);
 
@@ -52,9 +56,10 @@
 
         var calculatorButton = document.getElementById('submitCalculator');
         var fiveTimesValueOutput = document.getElementById('fiveTimesValue');
+        var calculatorInput = document.getElementById('fiveTimesInput');
         calculatorButton.addEventListener('click',function(event){
             event.preventDefault();
-            var inputValue = document.getElementById('fiveTimesInput').value;
+            var inputValue = calculatorInput.value;
             if(isNaN(inputValue) || !inputValue){
                 strMessage = 'Value entered is not a number';
                 fiveTimesValueOutput.innerHTML = strMessage;
@@ -62,7 +67,18 @@
                 var sum = inputValue * 5;
                 fiveTimesValueOutput.innerHTML = sum;
             }
-        })
+        });
+        calculatorInput.addEventListener('blur',function(event){
+            event.preventDefault();
+            var inputValue = calculatorInput.value;
+            if(isNaN(inputValue) || !inputValue){
+                strMessage = 'Value entered is not a number';
+                fiveTimesValueOutput.innerHTML = strMessage;
+            } else {
+                var sum = inputValue * 5;
+                fiveTimesValueOutput.innerHTML = sum;
+            }
+        });
     </script>
 </body>
 </html>
